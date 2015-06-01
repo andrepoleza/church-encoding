@@ -23,7 +23,7 @@ var two = function(f) {
 };
 
 // Applies the fn "f" to the arg "x" three times.
-// λf.λx.f (f x)
+// λf.λx.f (f (f x))
 var three = function(f) {
     return function(x) {
         return f(f(f(x)));
