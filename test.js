@@ -135,3 +135,14 @@ test('nand operation', function(t) {
 
 	t.end();
 });
+
+var norOperation = ce.norOperation;
+
+test('nor operation', function(t) {
+	t.assert(norOperation(trueExpression)(trueExpression)(true)(false) === false);
+	t.assert(norOperation(trueExpression)(falseExpression)(true)(false) === false);
+	t.assert(norOperation(falseExpression)(trueExpression)(true)(false) === false);
+	t.assert(norOperation(falseExpression)(falseExpression)(true)(false) === true);
+
+	t.end();
+});
