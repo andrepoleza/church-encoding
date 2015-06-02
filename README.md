@@ -17,6 +17,9 @@
 * org
 * not
 * xor
+* nand
+* xnor
+* nor
 
 ## Install
 
