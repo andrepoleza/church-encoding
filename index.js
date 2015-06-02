@@ -3,17 +3,20 @@
 // NOTICE: ALL FUNCTIONS >>>MUST BE<<< CURRIED!
 
 module.exports = {
-	zero: require('./lib/zero'),
-	one: require('./lib/one'),
-	two: require('./lib/two'),
-	three: require('./lib/three'),
-	successor: require('./lib/successor'),
-	addition: require('./lib/addition'),
 	churchToInteger: require('./lib/churchToInteger'),
 	ifThenElse: require('./lib/ifThenElse'),
-	trueExpression: require('./lib/true'),
-	falseExpression: require('./lib/false'),
-	andOperation: require('./lib/and'),
-	orOperation: require('./lib/or'),
-	notOperation: require('./lib/not')
+
+	zero: require('./lib/numerals/zero'),
+	one: require('./lib/numerals/one'),
+	two: require('./lib/numerals/two'),
+	three: require('./lib/numerals/three'),
+
+	successor: require('./lib/numerals/successor'),
+	addition: require('./lib/numerals/addition'),
+
+	trueExpression: require('./lib/booleans/true'),
+	falseExpression: require('./lib/booleans/false'),
+	andOperation: require('./lib/booleans/and'),
+	orOperation: require('./lib/booleans/or'),
+	notOperation: require('./lib/booleans/not')
 }
