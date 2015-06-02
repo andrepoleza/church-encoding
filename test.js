@@ -3,7 +3,7 @@
 var test = require('ava');
 var churchEncoding = require('./');
 
-function printToConsole(x) {
+function dumbFn(x) {
 	return x;
 }
 
@@ -21,9 +21,9 @@ test(function(t) {
 	t.assert(typeof two === 'function');
 	t.assert(typeof three === 'function');
 
-	t.assert(one(printToConsole('what') === 'what'));
-	t.assert(two(printToConsole('what') === 'whatwhat'));
-	t.assert(three(printToConsole('what') === 'whatwhatwhat'));
+	t.assert(one(dumbFn('what') === 'what'));
+	t.assert(two(dumbFn('what') === 'whatwhat'));
+	t.assert(three(dumbFn('what') === 'whatwhatwhat'));
 
 	t.end();
 });
