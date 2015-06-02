@@ -146,3 +146,14 @@ test('nor operation', function(t) {
 
 	t.end();
 });
+
+var xnorOperation = ce.xnorOperation;
+
+test('xnor operation', function(t) {
+	t.assert(xnorOperation(trueExpression)(trueExpression)(true)(false) === true);
+	t.assert(xnorOperation(trueExpression)(falseExpression)(true)(false) === false);
+	t.assert(xnorOperation(falseExpression)(trueExpression)(true)(false) === false);
+	t.assert(xnorOperation(falseExpression)(falseExpression)(true)(false) === true);
+
+	t.end();
+})
