@@ -1,9 +1,11 @@
+'use strict';
+
 // Applies "f" to "x" zero times.
 // λf.λx.x
 var zero = function(f) {
     return function(x) {
         return x;
-    }
+    };
 };
 
 // Applies the fn "f" to the arg "x" once.
@@ -11,7 +13,7 @@ var zero = function(f) {
 var one = function(f) {
     return function(x) {
         return f(x);
-    }
+    };
 };
 
 // Applies the fn "f" to the arg "x" twice.
@@ -19,7 +21,7 @@ var one = function(f) {
 var two = function(f) {
     return function(x) {
         return f(f(x));
-    }
+    };
 };
 
 // Applies the fn "f" to the arg "x" three times.
@@ -27,5 +29,5 @@ var two = function(f) {
 var three = function(f) {
     return function(x) {
         return f(f(f(x)));
-    }
+    };
 };
