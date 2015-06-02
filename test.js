@@ -76,3 +76,14 @@ test('and operation', function(t) {
 
 	t.end();
 });
+
+var orOperation = ce.orOperation;
+
+test('or operation', function(t) {
+	t.assert(orOperation(trueExpression)(trueExpression)(true)(false) === true);
+	t.assert(orOperation(trueExpression)(falseExpression)(true)(false) === true);
+	t.assert(orOperation(falseExpression)(trueExpression)(true)(false) === true);
+	t.assert(orOperation(falseExpression)(falseExpression)(true)(false) === false);
+
+	t.end();
+});

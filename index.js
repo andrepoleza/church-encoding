@@ -13,5 +13,6 @@ module.exports = {
 	ifThenElse: require('./lib/ifThenElse'),
 	trueExpression: require('./lib/true'),
 	falseExpression: require('./lib/false'),
-	andOperation: require('./lib/and')
+	andOperation: require('./lib/and'),
+	orOperation: require('./lib/or')
 }
