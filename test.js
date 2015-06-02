@@ -22,7 +22,7 @@ test('ensures that all church numbers are functions', function(t) {
 
 var churchToInteger = ce.churchToInteger;
 
-test('ensures that all church numbers are equal to its integer numbers', function(t) {
+test('church numerals', function(t) {
 	t.assert(churchToInteger(zero) === 0)
 	t.assert(churchToInteger(one) === 1);
 	t.assert(churchToInteger(two) === 2);
@@ -33,7 +33,7 @@ test('ensures that all church numbers are equal to its integer numbers', functio
 
 var successor = ce.successor;
 
-test('ensures that successor function adds one to the argument', function(t) {
+test('successor', function(t) {
 	t.assert(churchToInteger(successor(zero)) === 1);
 	t.assert(churchToInteger(successor(successor(zero))) === 2);
 	t.assert(churchToInteger(successor(successor(successor(zero)))) === 3);
@@ -43,7 +43,7 @@ test('ensures that successor function adds one to the argument', function(t) {
 
 var addition = ce.addition;
 
-test('ensures that addition function really adds the 1st arg to 2nd', function(t) {
+test('addition', function(t) {
 	t.assert(churchToInteger(addition(zero)(zero)) === 0);
 	t.assert(churchToInteger(addition(zero)(one)) === 1);
 	t.assert(churchToInteger(addition(one)(zero)) === 1);
@@ -61,13 +61,13 @@ var ifThenElse = ce.ifThenElse;
 var ifBranch = function() { };
 var elseBranch = function() { };
 
-test('checks if the test chooses the first branch if the condition is true', function(t) {
+test('ifBranch', function(t) {
 	t.assert(ifThenElse(trueExpression)(ifBranch)(elseBranch) === ifBranch);
 
 	t.end();
 });
 
-test('checks if the test chooses the second branch if the condition is false', function(t) {
+test('elseBranch', function(t) {
 	t.assert(ifThenElse(falseExpression)(ifBranch)(elseBranch) === elseBranch);
 
 	t.end();
