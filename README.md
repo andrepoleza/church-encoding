@@ -4,7 +4,19 @@
 [![Build Status](https://travis-ci.org/andrepoleza/church-encoding.svg?branch=master)](https://travis-ci.org/andrepoleza/church-encoding)
 [![Dependency Status](https://david-dm.org/andrepoleza/church-encoding.svg)](https://david-dm.org/andrepoleza/church-encoding)
 
-> [Church Encoding](http://en.wikipedia.org/wiki/Church_encoding) in JavaScript
+> [Church Encoding](http://en.wikipedia.org/wiki/Church_encoding) in JavaScript.
+
+## Operations available
+
+### Arithmetical
+* successor
+* addition
+
+### Logical
+* and
+* org
+* not
+* xor
 
 ## Install
 
