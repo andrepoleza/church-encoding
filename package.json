@@ -1,6 +1,6 @@
 {
   "name": "church-encoding",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Implementation of Church Encoding",
   "main": "index.js",
   "scripts": {
