@@ -14,5 +14,6 @@ module.exports = {
 	trueExpression: require('./lib/true'),
 	falseExpression: require('./lib/false'),
 	andOperation: require('./lib/and'),
-	orOperation: require('./lib/or')
+	orOperation: require('./lib/or'),
+	notOperation: require('./lib/not')
 }

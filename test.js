@@ -5,13 +5,11 @@ var churchEncoding = require('./');
 
 // Aliases
 var ce = churchEncoding;
-var churchToInteger = ce.churchToInteger;
+
 var zero = ce.zero;
 var one = ce.one;
 var two = ce.two;
 var three = ce.three;
-var successor = ce.successor;
-var addition = ce.addition;
 
 test('ensures that all church numbers are functions', function(t) {
 	t.assert(typeof zero === 'function');
@@ -22,6 +20,8 @@ test('ensures that all church numbers are functions', function(t) {
 	t.end();
 });
 
+var churchToInteger = ce.churchToInteger;
+
 test('ensures that all church numbers are equal to its integer numbers', function(t) {
 	t.assert(churchToInteger(zero) === 0)
 	t.assert(churchToInteger(one) === 1);
@@ -31,6 +31,8 @@ test('ensures that all church numbers are equal to its integer numbers', functio
 	t.end();
 });
 
+var successor = ce.successor;
+
 test('ensures that successor function adds one to the argument', function(t) {
 	t.assert(churchToInteger(successor(zero)) === 1);
 	t.assert(churchToInteger(successor(successor(zero))) === 2);
@@ -39,9 +41,14 @@ test('ensures that successor function adds one to the argument', function(t) {
 	t.end();
 });
 
+var addition = ce.addition;
+
 test('ensures that addition function really adds the 1st arg to 2nd', function(t) {
-	t.assert(churchToInteger(addition(one)(one)) === 2);
+	t.assert(churchToInteger(addition(zero)(zero)) === 0);
 	t.assert(churchToInteger(addition(zero)(one)) === 1);
+	t.assert(churchToInteger(addition(one)(zero)) === 1);
+	t.assert(churchToInteger(addition(one)(one)) === 2);
+
 	t.assert(churchToInteger(addition(two)(two)) === churchToInteger(successor(successor(two))));
 
 	t.end();
@@ -84,6 +91,25 @@ test('or operation', function(t) {
 	t.assert(orOperation(trueExpression)(falseExpression)(true)(false) === true);
 	t.assert(orOperation(falseExpression)(trueExpression)(true)(false) === true);
 	t.assert(orOperation(falseExpression)(falseExpression)(true)(false) === false);
+
+	t.end();
+});
+
+var notOperation = ce.notOperation;
+
+test('not operation', function(t) {
+	t.assert(notOperation(trueExpression)(true)(false) === false);
+	t.assert(notOperation(falseExpression)(true)(false) === true);
+
+	t.assert(notOperation(andOperation(trueExpression)(trueExpression))(true)(false) === false);
+	t.assert(notOperation(andOperation(trueExpression)(falseExpression))(true)(false) === true);
+	t.assert(notOperation(andOperation(falseExpression)(trueExpression))(true)(false) === true);
+	t.assert(notOperation(andOperation(falseExpression)(falseExpression))(true)(false) === true);
+
+	t.assert(notOperation(orOperation(trueExpression)(trueExpression))(true)(false) === false);
+	t.assert(notOperation(orOperation(trueExpression)(falseExpression))(true)(false) === false);
+	t.assert(notOperation(orOperation(falseExpression)(trueExpression))(true)(false) === false);
+	t.assert(notOperation(orOperation(falseExpression)(falseExpression))(true)(false) === true);
 
 	t.end();
 });
