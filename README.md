@@ -14,5 +14,5 @@ $ npm install --save church-encoding
 ```js
 var churchEncoding = require('church-encoding');
 
-//=> Exposes "zero", "one", "two" and "three" as functions (for now)
+//=> Exposes "zero", "one", "two", "three", "successor" and "addition" as functions (for now)
 ```
