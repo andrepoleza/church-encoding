@@ -43,4 +43,25 @@ test('ensures that addition function really adds the 1st arg to 2nd', function(t
 	t.assert(churchToInteger(addition(one)(one)) === 2);
 	t.assert(churchToInteger(addition(zero)(one)) === 1);
 	t.assert(churchToInteger(addition(two)(two)) === churchToInteger(successor(successor(two))));
+
+	t.end();
+});
+
+var trueExpression = ce.trueExpression;
+var falseExpression = ce.falseExpression;
+var ifThenElse = ce.ifThenElse;
+
+var ifBranch = function() { };
+var elseBranch = function() { };
+
+test('checks if the test chooses the first branch if the condition is true', function(t) {
+	t.assert(ifThenElse(trueExpression)(ifBranch)(elseBranch) === ifBranch);
+
+	t.end();
+});
+
+test('checks if the test chooses the second branch if the condition is false', function(t) {
+	t.assert(ifThenElse(falseExpression)(ifBranch)(elseBranch) === elseBranch);
+
+	t.end();
 });

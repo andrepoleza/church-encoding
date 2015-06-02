@@ -9,5 +9,8 @@ module.exports = {
 	three: require('./lib/three'),
 	successor: require('./lib/successor'),
 	addition: require('./lib/addition'),
-	churchToInteger: require('./lib/churchToInteger')
+	churchToInteger: require('./lib/churchToInteger'),
+	ifThenElse: require('./lib/ifThenElse'),
+	trueExpression: require('./lib/true'),
+	falseExpression: require('./lib/false')
 }
