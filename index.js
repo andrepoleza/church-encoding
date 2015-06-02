@@ -31,3 +31,13 @@ module.exports.three = function(f) {
 		return f(f(f(x)));
 	};
 };
+
+// Sends the arg "f" to the fn "n" and then applies again.
+// λn.λf.λx.f (n f x)
+module.exports.successor = function(n) {
+	return function(f) {
+		return function(x) {
+			return f(n(f)(x));
+		};
+	};
+};
