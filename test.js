@@ -26,10 +26,14 @@ test('ensures that all church numbers are equal to its integer numbers', functio
 	t.assert(churchToInteger(one) === 1);
 	t.assert(churchToInteger(two) === 2);
 	t.assert(churchToInteger(three) === 3);
+
+	t.end();
 });
 
 test('ensures that successor function adds one to the argument', function(t) {
 	t.assert(churchToInteger(successor(zero)) === 1);
 	t.assert(churchToInteger(successor(successor(zero))) === 2);
 	t.assert(churchToInteger(successor(successor(successor(zero)))) === 3);
+
+	t.end();
 });
