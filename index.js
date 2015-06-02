@@ -1,5 +1,10 @@
 'use strict';
 
+// Converts the Church number "n" (a function) to its correspondent integer.
+module.exports.churchToInteger = function(n) {
+	return n(function(x) { return x + 1; })(0);
+};
+
 // Applies "f" to "x" zero times.
 // λf.λx.x
 module.exports.zero = function(f) {
