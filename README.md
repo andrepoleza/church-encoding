@@ -1,6 +1,6 @@
 # church-encoding [![Build Status](https://travis-ci.org/andrepoleza/church-encoding.svg?branch=master)](https://travis-ci.org/andrepoleza/church-encoding)
 
-> Church Encoding in JavaScript
+> [Church Encoding](http://en.wikipedia.org/wiki/Church_encoding) in JavaScript
 
 ## Install
 
