@@ -2,7 +2,7 @@
 
 // Applies "f" to "x" zero times.
 // λf.λx.x
-var zero = function(f) {
+module.exports.zero = function(f) {
     return function(x) {
         return x;
     };
@@ -10,7 +10,7 @@ var zero = function(f) {
 
 // Applies the fn "f" to the arg "x" once.
 // λf.λx.f x
-var one = function(f) {
+module.exports.one = function(f) {
     return function(x) {
         return f(x);
     };
@@ -18,7 +18,7 @@ var one = function(f) {
 
 // Applies the fn "f" to the arg "x" twice.
 // λf.λx.f (f x)
-var two = function(f) {
+module.exports.two = function(f) {
     return function(x) {
         return f(f(x));
     };
@@ -26,7 +26,7 @@ var two = function(f) {
 
 // Applies the fn "f" to the arg "x" three times.
 // λf.λx.f (f (f x))
-var three = function(f) {
+module.exports.three = function(f) {
     return function(x) {
         return f(f(f(x)));
     };

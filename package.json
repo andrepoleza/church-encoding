@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/andrepoleza/church-encoding/issues"
   },
-  "homepage": "https://github.com/andrepoleza/church-encoding"
+  "homepage": "https://github.com/andrepoleza/church-encoding",
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
 }
