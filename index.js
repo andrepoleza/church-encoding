@@ -19,5 +19,6 @@ module.exports = {
 	andOperation: require('./lib/booleans/and'),
 	orOperation: require('./lib/booleans/or'),
 	notOperation: require('./lib/booleans/not'),
-	xorOperation: require('./lib/booleans/xor')
+	xorOperation: require('./lib/booleans/xor'),
+	nandOperation: require('./lib/booleans/nand')
 }

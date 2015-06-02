@@ -124,3 +124,14 @@ test('xor operation', function(t) {
 
 	t.end();
 });
+
+var nandOperation = ce.nandOperation;
+
+test('nand operation', function(t) {
+	t.assert(nandOperation(trueExpression)(trueExpression)(true)(false) === false);
+	t.assert(nandOperation(trueExpression)(falseExpression)(true)(false) === true);
+	t.assert(nandOperation(falseExpression)(trueExpression)(true)(false) === true);
+	t.assert(nandOperation(falseExpression)(falseExpression)(true)(false) === true);
+
+	t.end();
+});
