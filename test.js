@@ -39,6 +39,8 @@ test('ensures that successor function adds one to the argument', function(t) {
 	t.end();
 });
 
-test('ensures that additin function really adds the 1st arg to 2nd', function(t) {
+test('ensures that addition function really adds the 1st arg to 2nd', function(t) {
 	t.assert(churchToInteger(addition(one)(one)) === 2);
+	t.assert(churchToInteger(addition(zero)(one)) === 1);
+	t.assert(churchToInteger(addition(two)(two)) === churchToInteger(successor(successor(two))));
 });
