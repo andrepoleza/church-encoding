@@ -23,7 +23,7 @@ test('all church numbers === functions', function(t) {
 var churchToInteger = ce.churchToInteger;
 
 test('church numerals', function(t) {
-	t.assert(churchToInteger(zero) === 0)
+	t.assert(churchToInteger(zero) === 0);
 	t.assert(churchToInteger(one) === 1);
 	t.assert(churchToInteger(two) === 2);
 	t.assert(churchToInteger(three) === 3);
@@ -156,4 +156,4 @@ test('xnor operation', function(t) {
 	t.assert(xnorOperation(falseExpression)(falseExpression)(true)(false) === true);
 
 	t.end();
-})
+});

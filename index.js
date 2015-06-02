@@ -23,4 +23,4 @@ module.exports = {
 	nandOperation: require('./lib/booleans/nand'),
 	norOperation: require('./lib/booleans/nor'),
 	xnorOperation: require('./lib/booleans/xnor')
-}
+};
