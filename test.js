@@ -11,7 +11,7 @@ var one = ce.one;
 var two = ce.two;
 var three = ce.three;
 
-test('ensures that all church numbers are functions', function(t) {
+test('all church numbers === functions', function(t) {
 	t.assert(typeof zero === 'function');
 	t.assert(typeof one === 'function');
 	t.assert(typeof two === 'function');
@@ -61,13 +61,13 @@ var ifThenElse = ce.ifThenElse;
 var ifBranch = function() { };
 var elseBranch = function() { };
 
-test('ifBranch', function(t) {
+test('if branch', function(t) {
 	t.assert(ifThenElse(trueExpression)(ifBranch)(elseBranch) === ifBranch);
 
 	t.end();
 });
 
-test('elseBranch', function(t) {
+test('else branch', function(t) {
 	t.assert(ifThenElse(falseExpression)(ifBranch)(elseBranch) === elseBranch);
 
 	t.end();
@@ -110,6 +110,17 @@ test('not operation', function(t) {
 	t.assert(notOperation(orOperation(trueExpression)(falseExpression))(true)(false) === false);
 	t.assert(notOperation(orOperation(falseExpression)(trueExpression))(true)(false) === false);
 	t.assert(notOperation(orOperation(falseExpression)(falseExpression))(true)(false) === true);
+
+	t.end();
+});
+
+var xorOperation = ce.xorOperation;
+
+test('xor operation', function(t) {
+	t.assert(xorOperation(trueExpression)(trueExpression)(true)(false) === false);
+	t.assert(xorOperation(trueExpression)(falseExpression)(true)(false) === true);
+	t.assert(xorOperation(falseExpression)(trueExpression)(true)(false) === true);
+	t.assert(xorOperation(falseExpression)(falseExpression)(true)(false) === false);
 
 	t.end();
 });

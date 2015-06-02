@@ -18,5 +18,6 @@ module.exports = {
 	falseExpression: require('./lib/booleans/false'),
 	andOperation: require('./lib/booleans/and'),
 	orOperation: require('./lib/booleans/or'),
-	notOperation: require('./lib/booleans/not')
+	notOperation: require('./lib/booleans/not'),
+	xorOperation: require('./lib/booleans/xor')
 }
