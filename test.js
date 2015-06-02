@@ -65,3 +65,14 @@ test('checks if the test chooses the second branch if the condition is false', f
 
 	t.end();
 });
+
+var andOperation = ce.andOperation;
+
+test('and operation', function(t) {
+	t.assert(andOperation(trueExpression)(trueExpression)(true)(false) === true);
+	t.assert(andOperation(trueExpression)(falseExpression)(true)(false) === false);
+	t.assert(andOperation(falseExpression)(trueExpression)(true)(false) === false);
+	t.assert(andOperation(falseExpression)(falseExpression)(true)(false) === false);
+
+	t.end();
+});

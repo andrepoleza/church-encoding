@@ -12,5 +12,6 @@ module.exports = {
 	churchToInteger: require('./lib/churchToInteger'),
 	ifThenElse: require('./lib/ifThenElse'),
 	trueExpression: require('./lib/true'),
-	falseExpression: require('./lib/false')
+	falseExpression: require('./lib/false'),
+	andOperation: require('./lib/and')
 }
