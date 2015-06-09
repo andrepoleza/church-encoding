@@ -13,6 +13,7 @@ module.exports = {
 
 	successor: require('./lib/numerals/successor'),
 	addition: require('./lib/numerals/addition'),
+	multiplication: require('./lib/numerals/multiplication'),
 
 	trueExpression: require('./lib/booleans/true'),
 	falseExpression: require('./lib/booleans/false'),

@@ -54,6 +54,18 @@ test('addition', function(t) {
 	t.end();
 });
 
+var multiplication = ce.multiplication;
+
+test('multiplication', function(t) {
+	t.assert(churchToInteger(multiplication(one)(one)) === 1);
+	t.assert(churchToInteger(multiplication(one)(two)) === 2);
+	t.assert(churchToInteger(multiplication(one)(three)) === 3);
+	t.assert(churchToInteger(multiplication(two)(three)) === 6);
+	t.assert(churchToInteger(multiplication(three)(three)) === 9);
+
+	t.end();
+});
+
 var trueExpression = ce.trueExpression;
 var falseExpression = ce.falseExpression;
 var ifThenElse = ce.ifThenElse;
