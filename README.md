@@ -11,6 +11,7 @@
 ### Arithmetical
 * successor
 * addition
+* multiplication
 
 ### Logical
 * and
