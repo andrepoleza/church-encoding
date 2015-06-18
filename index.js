@@ -14,6 +14,7 @@ module.exports = {
 	successor: require('./lib/numerals/successor'),
 	addition: require('./lib/numerals/addition'),
 	multiplication: require('./lib/numerals/multiplication'),
+	exponentiation: require('./lib/numerals/exponentiation'),
 
 	trueExpression: require('./lib/booleans/true'),
 	falseExpression: require('./lib/booleans/false'),

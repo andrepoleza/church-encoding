@@ -66,6 +66,22 @@ test('multiplication', function(t) {
 	t.end();
 });
 
+var exponentiation = ce.exponentiation;
+
+test('exponentiation', function(t) {
+	t.assert(churchToInteger(exponentiation(one)(one)) === 1);
+	t.assert(churchToInteger(exponentiation(one)(two)) === 1);
+	t.assert(churchToInteger(exponentiation(one)(three)) === 1);
+	t.assert(churchToInteger(exponentiation(two)(one)) === 2);
+	t.assert(churchToInteger(exponentiation(two)(two)) === 4);
+	t.assert(churchToInteger(exponentiation(two)(three)) === 8);
+	t.assert(churchToInteger(exponentiation(three)(one)) === 3);
+	t.assert(churchToInteger(exponentiation(three)(two)) === 9);
+	t.assert(churchToInteger(exponentiation(three)(three)) === 27);
+
+	t.end();
+});
+
 var trueExpression = ce.trueExpression;
 var falseExpression = ce.falseExpression;
 var ifThenElse = ce.ifThenElse;
