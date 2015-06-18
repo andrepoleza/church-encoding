@@ -12,6 +12,7 @@
 * successor
 * addition
 * multiplication
+* exponentiation
 
 ### Logical
 * and
