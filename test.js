@@ -53,10 +53,14 @@ var addition = ce.addition;
 test('numerals/addition', function(t) {
 	t.assert(churchToInteger(addition(zero)(zero)) === 0);
 	t.assert(churchToInteger(addition(zero)(one)) === 1);
-	t.assert(churchToInteger(addition(one)(zero)) === 1);
+	t.assert(churchToInteger(addition(zero)(two)) === 2);
+	t.assert(churchToInteger(addition(zero)(three)) === 3);
 	t.assert(churchToInteger(addition(one)(one)) === 2);
-
-	t.assert(churchToInteger(addition(two)(two)) === churchToInteger(successor(successor(two))));
+	t.assert(churchToInteger(addition(one)(two)) === 3);
+	t.assert(churchToInteger(addition(one)(three)) === 4);
+	t.assert(churchToInteger(addition(two)(two)) === 4);
+	t.assert(churchToInteger(addition(two)(three)) === 5);
+	t.assert(churchToInteger(addition(three)(three)) === 6);
 
 	t.end();
 });
@@ -98,12 +102,14 @@ var elseBranch = function() { };
 
 test('if', function(t) {
 	t.assert(ifThenElse(trueExpression)(ifBranch)(elseBranch) === ifBranch);
+	t.assert(ifThenElse(trueExpression)(ifBranch)(elseBranch) !== elseBranch);
 
 	t.end();
 });
 
 test('else', function(t) {
 	t.assert(ifThenElse(falseExpression)(ifBranch)(elseBranch) === elseBranch);
+	t.assert(ifThenElse(falseExpression)(ifBranch)(elseBranch) !== ifBranch);
 
 	t.end();
 });
