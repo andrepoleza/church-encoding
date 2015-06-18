@@ -23,6 +23,9 @@
 * xnor
 * nor
 
+### Predicates
+* is zero
+
 ## Install
 
 ```
