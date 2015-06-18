@@ -11,18 +11,9 @@ var one = ce.one;
 var two = ce.two;
 var three = ce.three;
 
-test('all church numbers === functions', function(t) {
-	t.assert(typeof zero === 'function');
-	t.assert(typeof one === 'function');
-	t.assert(typeof two === 'function');
-	t.assert(typeof three === 'function');
-
-	t.end();
-});
-
 var churchToInteger = ce.churchToInteger;
 
-test('church numerals', function(t) {
+test('churchToInteger', function(t) {
 	t.assert(churchToInteger(zero) === 0);
 	t.assert(churchToInteger(one) === 1);
 	t.assert(churchToInteger(two) === 2);
@@ -31,19 +22,35 @@ test('church numerals', function(t) {
 	t.end();
 });
 
+var integerToChurch = ce.integerToChurch;
+
+test('integerToChurch', function(t) {
+	t.assert(integerToChurch(0) === zero);
+	t.assert(churchToInteger(integerToChurch(1)) === 1);
+	t.assert(churchToInteger(integerToChurch(2)) === 2);
+	t.assert(churchToInteger(integerToChurch(3)) === 3);
+
+	t.end();
+});
+
 var successor = ce.successor;
 
-test('successor', function(t) {
+test('numerals/successor', function(t) {
 	t.assert(churchToInteger(successor(zero)) === 1);
+	t.assert(churchToInteger(successor(one)) === 2);
+	t.assert(churchToInteger(successor(two)) === 3);
+	t.assert(churchToInteger(successor(three)) === 4);
+
 	t.assert(churchToInteger(successor(successor(zero))) === 2);
 	t.assert(churchToInteger(successor(successor(successor(zero)))) === 3);
+	t.assert(churchToInteger(successor(successor(successor(successor(zero))))) === 4);
 
 	t.end();
 });
 
 var addition = ce.addition;
 
-test('addition', function(t) {
+test('numerals/addition', function(t) {
 	t.assert(churchToInteger(addition(zero)(zero)) === 0);
 	t.assert(churchToInteger(addition(zero)(one)) === 1);
 	t.assert(churchToInteger(addition(one)(zero)) === 1);
@@ -56,7 +63,7 @@ test('addition', function(t) {
 
 var multiplication = ce.multiplication;
 
-test('multiplication', function(t) {
+test('numerals/multiplication', function(t) {
 	t.assert(churchToInteger(multiplication(one)(one)) === 1);
 	t.assert(churchToInteger(multiplication(one)(two)) === 2);
 	t.assert(churchToInteger(multiplication(one)(three)) === 3);
@@ -68,7 +75,7 @@ test('multiplication', function(t) {
 
 var exponentiation = ce.exponentiation;
 
-test('exponentiation', function(t) {
+test('numerals/exponentiation', function(t) {
 	t.assert(churchToInteger(exponentiation(one)(one)) === 1);
 	t.assert(churchToInteger(exponentiation(one)(two)) === 1);
 	t.assert(churchToInteger(exponentiation(one)(three)) === 1);
@@ -89,13 +96,13 @@ var ifThenElse = ce.ifThenElse;
 var ifBranch = function() { };
 var elseBranch = function() { };
 
-test('if branch', function(t) {
+test('if', function(t) {
 	t.assert(ifThenElse(trueExpression)(ifBranch)(elseBranch) === ifBranch);
 
 	t.end();
 });
 
-test('else branch', function(t) {
+test('else', function(t) {
 	t.assert(ifThenElse(falseExpression)(ifBranch)(elseBranch) === elseBranch);
 
 	t.end();
@@ -103,7 +110,7 @@ test('else branch', function(t) {
 
 var andOperation = ce.andOperation;
 
-test('and operation', function(t) {
+test('booleans/and', function(t) {
 	t.assert(andOperation(trueExpression)(trueExpression)(true)(false) === true);
 	t.assert(andOperation(trueExpression)(falseExpression)(true)(false) === false);
 	t.assert(andOperation(falseExpression)(trueExpression)(true)(false) === false);
@@ -114,7 +121,7 @@ test('and operation', function(t) {
 
 var orOperation = ce.orOperation;
 
-test('or operation', function(t) {
+test('booleans/or', function(t) {
 	t.assert(orOperation(trueExpression)(trueExpression)(true)(false) === true);
 	t.assert(orOperation(trueExpression)(falseExpression)(true)(false) === true);
 	t.assert(orOperation(falseExpression)(trueExpression)(true)(false) === true);
@@ -125,7 +132,7 @@ test('or operation', function(t) {
 
 var notOperation = ce.notOperation;
 
-test('not operation', function(t) {
+test('booleans/not', function(t) {
 	t.assert(notOperation(trueExpression)(true)(false) === false);
 	t.assert(notOperation(falseExpression)(true)(false) === true);
 
@@ -144,7 +151,7 @@ test('not operation', function(t) {
 
 var xorOperation = ce.xorOperation;
 
-test('xor operation', function(t) {
+test('booleans/xor', function(t) {
 	t.assert(xorOperation(trueExpression)(trueExpression)(true)(false) === false);
 	t.assert(xorOperation(trueExpression)(falseExpression)(true)(false) === true);
 	t.assert(xorOperation(falseExpression)(trueExpression)(true)(false) === true);
@@ -155,7 +162,7 @@ test('xor operation', function(t) {
 
 var nandOperation = ce.nandOperation;
 
-test('nand operation', function(t) {
+test('booleans/nand', function(t) {
 	t.assert(nandOperation(trueExpression)(trueExpression)(true)(false) === false);
 	t.assert(nandOperation(trueExpression)(falseExpression)(true)(false) === true);
 	t.assert(nandOperation(falseExpression)(trueExpression)(true)(false) === true);
@@ -166,7 +173,7 @@ test('nand operation', function(t) {
 
 var norOperation = ce.norOperation;
 
-test('nor operation', function(t) {
+test('booleans/nor', function(t) {
 	t.assert(norOperation(trueExpression)(trueExpression)(true)(false) === false);
 	t.assert(norOperation(trueExpression)(falseExpression)(true)(false) === false);
 	t.assert(norOperation(falseExpression)(trueExpression)(true)(false) === false);
@@ -177,11 +184,22 @@ test('nor operation', function(t) {
 
 var xnorOperation = ce.xnorOperation;
 
-test('xnor operation', function(t) {
+test('booleans/xnor', function(t) {
 	t.assert(xnorOperation(trueExpression)(trueExpression)(true)(false) === true);
 	t.assert(xnorOperation(trueExpression)(falseExpression)(true)(false) === false);
 	t.assert(xnorOperation(falseExpression)(trueExpression)(true)(false) === false);
 	t.assert(xnorOperation(falseExpression)(falseExpression)(true)(false) === true);
+
+	t.end();
+});
+
+var isZero = ce.isZero;
+
+test('predicates/isZero', function(t) {
+	t.assert(isZero(zero) === trueExpression);
+	t.assert(isZero(one) === falseExpression);
+	t.assert(isZero(two) === falseExpression);
+	t.assert(isZero(three) === falseExpression);
 
 	t.end();
 });
