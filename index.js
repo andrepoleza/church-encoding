@@ -1,7 +1,5 @@
 'use strict';
 
-// NOTICE: ALL FUNCTIONS >>>MUST BE<<< CURRIED!
-
 module.exports = {
 	churchToInteger: require('./lib/churchToInteger'),
 	integerToChurch: require('./lib/integerToChurch'),
