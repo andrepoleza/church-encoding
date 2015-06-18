@@ -8,6 +8,8 @@
 
 ## Operations available
 
+* ifThenElse
+
 ### Arithmetical
 * successor
 * addition
@@ -15,16 +17,22 @@
 * exponentiation
 
 ### Logical
-* and
-* org
-* not
-* xor
-* nand
-* xnor
-* nor
+* trueExpression
+* falseExpression
+* andOperation
+* orgOperation
+* notOperation
+* xorOperation
+* nandOperation
+* xnorOperation
+* norOperation
 
 ### Predicates
-* is zero
+* isZero
+
+#### Helpers
+* churchToInteger
+* integerToChurch
 
 ## Install
 
