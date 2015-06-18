@@ -20,7 +20,7 @@
 * trueExpression
 * falseExpression
 * andOperation
-* orgOperation
+* orOperation
 * notOperation
 * xorOperation
 * nandOperation
