@@ -1,7 +1,7 @@
 {
   "name": "church-encoding",
-  "version": "0.0.7",
-  "description": "Implementation of Church Encoding",
+  "version": "0.0.8",
+  "description": "Church Encoding implementation",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
