@@ -36,6 +36,7 @@
 * areEqual
 * areNotEqual
 * isLess
+* isGreater
 
 #### Helpers
 * churchToInteger
