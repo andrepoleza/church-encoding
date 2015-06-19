@@ -16,6 +16,7 @@
 * multiplication
 * exponentiation
 * predecessor
+* subtraction
 
 ### Logical
 * trueExpression
