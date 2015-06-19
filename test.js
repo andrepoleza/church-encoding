@@ -330,3 +330,26 @@ test('predicates/areNotEqual', function(t) {
 
 	t.end();
 });
+
+var isLess = ce.isLess;
+
+test('predicates/isLess', function(t) {
+	t.assert(isLess(zero)(zero) === falseExpression);
+	t.assert(isLess(zero)(one) === trueExpression);
+	t.assert(isLess(zero)(two) === trueExpression);
+	t.assert(isLess(zero)(three) === trueExpression);
+	t.assert(isLess(one)(zero) === falseExpression);
+	t.assert(isLess(one)(one) === falseExpression);
+	t.assert(isLess(one)(two) === trueExpression);
+	t.assert(isLess(one)(three) === trueExpression);
+	t.assert(isLess(two)(zero) === falseExpression);
+	t.assert(isLess(two)(one) === falseExpression);
+	t.assert(isLess(two)(two) === falseExpression);
+	t.assert(isLess(two)(three) === trueExpression);
+	t.assert(isLess(three)(zero) === falseExpression);
+	t.assert(isLess(three)(one) === falseExpression);
+	t.assert(isLess(three)(two) === falseExpression);
+	t.assert(isLess(three)(three) === falseExpression);
+
+	t.end();
+});
