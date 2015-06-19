@@ -34,6 +34,7 @@
 * isLessOrEqual
 * isGreaterOrEqual
 * areEqual
+* areNotEqual
 
 #### Helpers
 * churchToInteger
