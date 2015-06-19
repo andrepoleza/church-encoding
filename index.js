@@ -31,5 +31,6 @@ module.exports = {
 	// predicates
 	isZero: require('./lib/predicates/isZero'),
 	isLessOrEqual: require('./lib/predicates/isLessOrEqual'),
-	isGreaterOrEqual: require('./lib/predicates/isGreaterOrEqual')
+	isGreaterOrEqual: require('./lib/predicates/isGreaterOrEqual'),
+	areEqual: require('./lib/predicates/areEqual')
 };
