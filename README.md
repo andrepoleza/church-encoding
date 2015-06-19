@@ -32,6 +32,7 @@
 ### Predicates
 * isZero
 * isLessOrEqual
+* isGreaterOrEqual
 
 #### Helpers
 * churchToInteger
