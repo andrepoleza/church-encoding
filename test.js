@@ -307,3 +307,26 @@ test('predicates/areEqual', function(t) {
 
 	t.end();
 });
+
+var areNotEqual = ce.areNotEqual;
+
+test('predicates/areNotEqual', function(t) {
+	t.assert(areNotEqual(zero)(zero) === falseExpression);
+	t.assert(areNotEqual(zero)(one) === trueExpression);
+	t.assert(areNotEqual(zero)(two) === trueExpression);
+	t.assert(areNotEqual(zero)(three) === trueExpression);
+	t.assert(areNotEqual(one)(zero) === trueExpression);
+	t.assert(areNotEqual(one)(one) === falseExpression);
+	t.assert(areNotEqual(one)(two) === trueExpression);
+	t.assert(areNotEqual(one)(three) === trueExpression);
+	t.assert(areNotEqual(two)(zero) === trueExpression);
+	t.assert(areNotEqual(two)(one) === trueExpression);
+	t.assert(areNotEqual(two)(two) === falseExpression);
+	t.assert(areNotEqual(two)(three) === trueExpression);
+	t.assert(areNotEqual(three)(zero) === trueExpression);
+	t.assert(areNotEqual(three)(one) === trueExpression);
+	t.assert(areNotEqual(three)(two) === trueExpression);
+	t.assert(areNotEqual(three)(three) === falseExpression);
+
+	t.end();
+});
