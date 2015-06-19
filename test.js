@@ -261,3 +261,26 @@ test('predicates/isLessOrEqual', function(t) {
 
 	t.end();
 });
+
+var isGreaterOrEqual = ce.isGreaterOrEqual;
+
+test('predicates/isGreaterOrEqual', function(t) {
+	t.assert(isGreaterOrEqual(zero)(zero) === trueExpression);
+	t.assert(isGreaterOrEqual(zero)(one) === falseExpression);
+	t.assert(isGreaterOrEqual(zero)(two) === falseExpression);
+	t.assert(isGreaterOrEqual(zero)(three) === falseExpression);
+	t.assert(isGreaterOrEqual(one)(zero) === trueExpression);
+	t.assert(isGreaterOrEqual(one)(one) === trueExpression);
+	t.assert(isGreaterOrEqual(one)(two) === falseExpression);
+	t.assert(isGreaterOrEqual(one)(three) === falseExpression);
+	t.assert(isGreaterOrEqual(two)(zero) === trueExpression);
+	t.assert(isGreaterOrEqual(two)(one) === trueExpression);
+	t.assert(isGreaterOrEqual(two)(two) === trueExpression);
+	t.assert(isGreaterOrEqual(two)(three) === falseExpression);
+	t.assert(isGreaterOrEqual(three)(zero) === trueExpression);
+	t.assert(isGreaterOrEqual(three)(one) === trueExpression);
+	t.assert(isGreaterOrEqual(three)(two) === trueExpression);
+	t.assert(isGreaterOrEqual(three)(three) === trueExpression);
+
+	t.end();
+});
