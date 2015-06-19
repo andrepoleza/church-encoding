@@ -33,6 +33,7 @@
 * isZero
 * isLessOrEqual
 * isGreaterOrEqual
+* areEqual
 
 #### Helpers
 * churchToInteger
