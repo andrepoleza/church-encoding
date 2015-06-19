@@ -93,6 +93,18 @@ test('numerals/exponentiation', function(t) {
 	t.end();
 });
 
+var predecessor = ce.predecessor;
+
+test('numerals/predecessor', function(t) {
+	t.assert(churchToInteger(predecessor(zero)) === 0);
+	t.assert(churchToInteger(predecessor(one)) === 0);
+	t.assert(churchToInteger(predecessor(two)) === 1);
+	t.assert(churchToInteger(predecessor(three)) === 2);
+	t.assert(churchToInteger(predecessor(successor(three))) === 3);
+
+	t.end();
+});
+
 var trueExpression = ce.trueExpression;
 var falseExpression = ce.falseExpression;
 var ifThenElse = ce.ifThenElse;
