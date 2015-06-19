@@ -353,3 +353,26 @@ test('predicates/isLess', function(t) {
 
 	t.end();
 });
+
+var isGreater = ce.isGreater;
+
+test('predicates/isGreater', function(t) {
+	t.assert(isGreater(zero)(zero) === falseExpression);
+	t.assert(isGreater(zero)(one) === falseExpression);
+	t.assert(isGreater(zero)(two) === falseExpression);
+	t.assert(isGreater(zero)(three) === falseExpression);
+	t.assert(isGreater(one)(zero) === trueExpression);
+	t.assert(isGreater(one)(one) === falseExpression);
+	t.assert(isGreater(one)(two) === falseExpression);
+	t.assert(isGreater(one)(three) === falseExpression);
+	t.assert(isGreater(two)(zero) === trueExpression);
+	t.assert(isGreater(two)(one) === trueExpression);
+	t.assert(isGreater(two)(two) === falseExpression);
+	t.assert(isGreater(two)(three) === falseExpression);
+	t.assert(isGreater(three)(zero) === trueExpression);
+	t.assert(isGreater(three)(one) === trueExpression);
+	t.assert(isGreater(three)(two) === trueExpression);
+	t.assert(isGreater(three)(three) === falseExpression);
+
+	t.end();
+});
