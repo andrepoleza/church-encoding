@@ -29,5 +29,6 @@ module.exports = {
 	xnorOperation: require('./lib/booleans/xnor'),
 
 	// predicates
-	isZero: require('./lib/predicates/isZero')
+	isZero: require('./lib/predicates/isZero'),
+	isLessOrEqual: require('./lib/predicates/isLessOrEqual')
 };
