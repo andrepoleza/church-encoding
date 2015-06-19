@@ -105,6 +105,23 @@ test('numerals/predecessor', function(t) {
 	t.end();
 });
 
+var subtraction = ce.subtraction;
+
+test('numerals/subtraction', function(t) {
+	t.assert(churchToInteger(subtraction(three)(three)) === 0);
+	t.assert(churchToInteger(subtraction(three)(two)) === 1);
+	t.assert(churchToInteger(subtraction(three)(one)) === 2);
+	t.assert(churchToInteger(subtraction(three)(zero)) === 3);
+	t.assert(churchToInteger(subtraction(two)(two)) === 0);
+	t.assert(churchToInteger(subtraction(two)(one)) === 1);
+	t.assert(churchToInteger(subtraction(two)(zero)) === 2);
+	t.assert(churchToInteger(subtraction(one)(one)) === 0);
+	t.assert(churchToInteger(subtraction(one)(zero)) === 1);
+	t.assert(churchToInteger(subtraction(zero)(zero)) === 0);
+
+	t.end();
+});
+
 var trueExpression = ce.trueExpression;
 var falseExpression = ce.falseExpression;
 var ifThenElse = ce.ifThenElse;
