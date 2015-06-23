@@ -1,11 +1,17 @@
 {
   "name": "church-encoding",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Church Encoding implementation",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
+  "keywords": [
+    "church",
+    "encoding",
+    "lambda",
+    "calculus"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/andrepoleza/church-encoding.git"
